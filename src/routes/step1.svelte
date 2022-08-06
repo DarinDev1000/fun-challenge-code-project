@@ -8,14 +8,14 @@
   let timeExpired = false;
 
   // Change these per page
-  let route = "step2";
+  let nextRoute = "step2";
   let question = "Now this is a hard one, are there any blasters in our family?";
   let answers = ["Yes", "No"];
   let correctAnswer = "Yes";
 
   function handleSubmit() {
     if (answers[selection] === correctAnswer && !timeExpired) {
-      goto(`/${route}`, { replaceState: false });
+      goto(`/${nextRoute}`, { replaceState: false });
     } else {
       errorText = "You sure about that?";
     }
