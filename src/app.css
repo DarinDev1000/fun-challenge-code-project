@@ -1,0 +1,39 @@
+html, body {
+	height: 100vh;
+}
+body {
+	margin: 0;
+	background-color: coral;
+	font-family: 'Source Code Pro', monospace;
+	color: #333;
+}
+
+#app {
+	padding: 20px;
+}
+
+.flex-container {
+	display: flex;           /* establish flex container */
+	flex-direction: column;  /* make main axis vertical */
+	justify-content: center; /* center items vertically, in this case */
+	align-items: center;     /* center items horizontally, in this case */
+	height: 300px;
+}
+.row {
+	text-align: center;     /* will center text in <p>, which is not a flex item */
+	width: 100%;
+	margin: 5px;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
