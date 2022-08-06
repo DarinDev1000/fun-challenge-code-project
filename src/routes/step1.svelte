@@ -58,7 +58,7 @@
 
 <div id="app" class="flex-container">
   <div class="row">
-    <h1 id="countdown-timer"></h1>
+    <h1 id="countdown-timer">0m 00s 00ms</h1>
     <h2>{question}</h2>
   </div>
   {#each answers as answer, i}

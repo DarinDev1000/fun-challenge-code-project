@@ -1,24 +1,23 @@
 <script>
   import { goto } from "$app/navigation";
 
-  let selection = -1;
   let submitTries = 0;
-  let maxSubmitTries = 4;
+  let maxSubmitTries = 5;
   let errorText = "";
   let submitText = "Submit";
+  let submittedAnswer = "";
 
   // Change these per page
-  let nextRoute = "step4";
-  let question = "What rocket league rank is this? (Can use a hint from Cody)";
-  let answers = ["Platinum", "Grand Champion", "Bronze", "Grand Plat", "Supersonic Legend"];
-  let correctAnswer = "Grand Plat";
+  let nextRoute = "step5";
+  let question = "What is the passcode?";
+  let correctAnswer = 9475;
 
   function handleSubmit() {
-    submitTries++;
-    if (answers[selection] === correctAnswer && submitTries < maxSubmitTries) {
+    if (submittedAnswer === correctAnswer && submitTries < maxSubmitTries) {
       goto(`/${nextRoute}`, { replaceState: false });
     } else {
-      errorText = "Is this a real rank?";
+      submitTries++;
+      errorText = "You sure about that?";
     }
   }
 </script>
@@ -26,16 +25,12 @@
 <div id="app" class="flex-container">
   <div class="row">
     <h2>{question}</h2>
-    <img src="grand-platinum.jpg" alt="rl-rank" width="250px" height="250px">
   </div>
-  {#each answers as answer, i}
     <div class="row">
       <label>
-        <input type="radio" class="radio-button" bind:group={selection} value={i} />
-        {answer}
+        <input type="number" bind:value={submittedAnswer} placeholder="enter a 4 number passcode" />
       </label>
     </div>
-  {/each}
   <div class="row">
     <p>{errorText}</p>
     <a id="submit" class="button" on:click={handleSubmit}>{submitText}:

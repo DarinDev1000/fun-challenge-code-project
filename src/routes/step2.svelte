@@ -15,7 +15,7 @@
     if (answers[selection] === correctAnswer) {
       goto(`/${nextRoute}`, { replaceState: false });
     } else {
-      errorText = "You sure about that?";
+      errorText = "And I thought you were smart...";
     }
   }
 </script>
